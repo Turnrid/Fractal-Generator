@@ -99,4 +99,14 @@ Other code smells may be present; list them as well.
 
 ## Code Smells
 
-*TODO: Write your report here*
+0. `src/julia_fractal.py`, [lines 68,69] 
+        * [What kind of code smell] Both Global Variables
+        * [Why is the smell a problem?] The first `grad` can be added as a parameter since
+only one function calls it. For the second `win` it doesn't get called anywhere, so it is redundant.
+    * Code Snippet:
+    ```python
+    global grad  	         	  
+    global win
+    ```
+1.  `src/julia_fractal.py`, 
+   
