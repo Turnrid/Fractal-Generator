@@ -19,9 +19,12 @@ A good solution will:
 
 **Deliver:**
 
-*   List all of the data that is used by the program, making note of where it comes from.
-*   Explain what form the output will take.
-*   Describe what algorithms and formulae will be used (but don't write them yet).
+
+The user will input a string that our main module will feed into our Fractal Information module and get the correct
+dict that the image painter module will need. The image painter will then start a canvas to be drawn on and based on the
+string from main will call the correct fractal module to calculate the correct color that it will pull from the palette 
+module. With the data from those two modules the Image Painter will then update the canvas and draw it to the screen.
+Once drawn a png file will be created with the image that was drawn.
 
 
 ## Phase 2: Design *(30%)*
@@ -38,6 +41,77 @@ A good solution will:
     *   Write a few specific examples that occurred to you.
 
 
+* main.py
+  * menu(string)
+    * Menu function that will take the string from the user, and give the string 
+    to the image Painter module.
+    * Will call the menu function and get the ball rolling.
+
+* fractalInfo.py
+  * whichImage(string)
+    * Function that will take the string and give back the correct dictionary with the correct values to the 
+image painter module.
+
+* image_painter.py
+  * Will instantiate a canvas to be drawn on, and grab current time to track how long it takes to draw.
+  * paint(dict, string)
+    * Will take the dictionary values to get the correct placement of the fractal on the canvas. Will display the 
+canvas to the screen and for each pixel grab the correct pixel color from the correct fractal module and in rows draw
+to the screen until all pixels have been drawn.
+  * Grab the current time and print how long image took to draw
+  * createFile(string)
+    * With the string create a png file of the image and save in the correct folder
+
+* palette.py
+  * whichPalette(string)
+    * Will take the string given by the user and determine which list of color values to give to the image painter.
+
+* mandelbrot.py
+  * pixelColor(int, list)
+    * Will take the complex number and the correct palette list to return the right color value for the current pixel
+that the image painter is drawing.
+
+* julia.py
+  * pixelColor(int, list)
+    * Will take the complex number and the correct palette list to return the right color value for the current pixel
+that the image painter is drawing.
+
+========================================================================================================================
+
+* main.py
+  * menu(string)
+    
+
+* fractalInfo.py
+  * whichImage(string)
+    * Function that will take the string and give back the correct dictionary with the correct values to the 
+image painter module.
+
+* image_painter.py
+  * Will instantiate a canvas to be drawn on, and grab current time to track how long it takes to draw.
+  * paint(dict, string)
+    * Will take the dictionary values to get the correct placement of the fractal on the canvas. Will display the 
+canvas to the screen and for each pixel grab the correct pixel color from the correct fractal module and in rows draw
+to the screen until all pixels have been drawn.
+  * Grab the current time and print how long image took to draw
+  * createFile(string)
+    * With the string create a png file of the image and save in the correct folder
+
+* palette.py
+  * whichPalette(string)
+    * Will take the string given by the user and determine which list of color values to give to the image painter.
+
+* mandelbrot.py
+  * pixelColor(int, list)
+    * Will take the complex number and the correct palette list to return the right color value for the current pixel
+that the image painter is drawing.
+
+* julia.py
+  * pixelColor(int, list)
+    * Will take the complex number and the correct palette list to return the right color value for the current pixel
+that the image painter is drawing.
+
+    
 ## Phase 3: Implementation *(15%)*
 
 **Deliver:**
