@@ -71,20 +71,20 @@ WHITE = '#ffffff'
 palette = [  	         	  
     '#89ff00', '#a4f817', '#baf12e', '#ccec43', '#d9e758', '#e3e46b', '#e1d97e',  	         	  
     '#e0d18f', '#dfce9f', '#e0ceaf', '#e1d1bd', '#e4d6cb', '#e7ddd7', '#ece5e3',  	         	  
-    '#f1eeed', '#f8f7f7', WHITE, '#f8f7f7', '#f1eeed', '#ece4e3', '#e7dbd7',  	         	  
+    '#f1eeed', '#f8f7f7', '#ffffff', '#f8f7f7', '#f1eeed', '#ece4e3', '#e7dbd7',
     '#e4d3cb', '#e1cbbd', '#e0c4af', '#dfbf9f', '#e0bd8f', '#e1bc7e', '#e4bf6b',  	         	  
-    '#e7c458', '#eccd43', '#f1da2e', '#f8eb17', LEMON, '#f8eb17', '#f1da2e',  	         	  
+    '#e7c458', '#eccd43', '#f1da2e', '#f8eb17', '#fdff00', '#f8eb17', '#f1da2e',
     '#eccd43', '#e7c458', '#e4bf6b', '#e1bc7e', '#e0bd8f', '#dfbf9f', '#e0c4af',  	         	  
-    '#e1cbbd', '#e4d3cb', '#e7dbd7', '#ece4e3', '#f1eeed', '#f8f7f7', WHITE,  	         	  
+    '#e1cbbd', '#e4d3cb', '#e7dbd7', '#ece4e3', '#f1eeed', '#f8f7f7', '#ffffff',
     '#f7f6f6', '#f1eded', '#ebe4e2', '#e6dad7', '#e3d0ca', '#e0c6bd', '#debeae',  	         	  
     '#deb69f', '#deaf8e', '#dfaa7d', '#e1a66b', '#e4a557', '#e9a643', '#eea92e',  	         	  
-    '#f4af17', TANGERINE, '#f4af17', '#eea92e', '#e9a643', '#e4a557', '#e1a66b',  	         	  
+    '#f4af17', '#f7b604', '#f4af17', '#eea92e', '#e9a643', '#e4a557', '#e1a66b',
     '#dfaa7d', '#deaf8e', '#deb69f', '#debeae', '#e0c6bd', '#e3d0ca', '#e6dad7',  	         	  
-    '#ebe4e2', '#f1eded', '#f7f6f6', WHITE, '#f8f7f7', '#f2f1ef', '#ebece5',  	         	  
+    '#ebe4e2', '#f1eded', '#f7f6f6', '#ffffff', '#f8f7f7', '#f2f1ef', '#ebece5',
     '#e2e7db', '#d3e3d0', '#c5e0ca', '#b9ddce', '#abdbd9', '#9ec8da', '#8fa7da',  	         	  
-    '#8480db', '#9c70dc', '#c25fde', '#e04dcb', '#e43b8d', WHITE, '#f7f6f6',  	         	  
+    '#8480db', '#9c70dc', '#c25fde', '#e04dcb', '#e43b8d', '#ffffff', '#f7f6f6',
     '#f0efec', '#e8eae1', '#dae5d5', '#c8e1cb', '#badecd', '#abdbd9', '#9cc4da',  	         	  
-    '#8b9cda', '#8d79db', '#b066dd', '#e052da', '#e33e97', GRAPEFRUIT_PINK, ]  	         	  
+    '#8b9cda', '#8d79db', '#b066dd', '#e052da', '#e33e97', '#e8283f' ]
 
 MAX_ITERATIONS = len(palette)  	         	  
 z = 0  	         	  
@@ -257,20 +257,20 @@ images = {
         }  	         	  
 
 
-def mbrot_main(image):  	         	  
+def mbrot_main(userInput):
     global img  	         	  
     # Set up the GUI so that we can paint the fractal image on the screen  	         	  
     before = time.time()  	         	  
     global window  	         	  
     window = Tk()  	         	  
     img = PhotoImage(width=512, height=512)  	         	  
-    paint(images, image)  	         	  
+    paint(images, userInput)
 
     # Save the image as a PNG  	         	  
     after = time.time()  	         	  
     print(f"Done in {after - before:.3f} seconds!", file=sys.stderr)  	         	  
-    img.write(f"{image}.png")  	         	  
-    print(f"Wrote image {image}.png")  	         	  
+    img.write(f"{userInput}.png")
+    print(f"Wrote image {userInput}.png")
 
     # Call tkinter.mainloop so the GUI remains open  	         	  
     print("Close the image window to exit the program")  	         	  
