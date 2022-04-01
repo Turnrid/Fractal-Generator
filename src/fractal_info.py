@@ -25,28 +25,28 @@ images = {
         'fulljulia': {
             'centerX':     0.0,
             'centerY':     0.0,
-            'axisLength':  4.0,
+            'axisLen':  4.0,
             },
 
         # This one looks like an hourglass to me
         'hourglass': {
             'centerX':     0.618,
             'centerY':     0.00,
-            'axisLength':  0.017148277367054,
+            'axisLen':  0.017148277367054,
         },
 
         # This fractal reminds me of lakes, but it might remind somebody else of something else
         'lakes': {
             'centerX': -0.339230468501458,
             'centerY': 0.417970758224314,
-            'axisLength': 0.164938488846612,
+            'axisLen': 0.164938488846612,
             },
 
         # My grandmother has lace curtains that look JUST LIKE THIS!
         'lace-curtains': {
             'centerX': -1.01537721564149,
             'centerY': 0.249425427273733,
-            'axisLength': 0.0121221433855615,
+            'axisLen': 0.0121221433855615,
             },
 
         'mandelbrot': {

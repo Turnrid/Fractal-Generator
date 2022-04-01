@@ -9,3 +9,8 @@ def returnIterationCount(complexNum, paletteLength):
         if abs(z) > 2:
             return i  # The sequence is unbounded
     return paletteLength - 1   # Indicate a bounded sequence
+
+def pixelsWrittenSoFar(rows, cols):
+    pixels = rows * cols
+    print(f"{pixels} pixels have been output so far")
+    return pixels

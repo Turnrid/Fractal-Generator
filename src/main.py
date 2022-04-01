@@ -24,12 +24,13 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  	         	  
 # IN THE SOFTWARE.  	         	  
 
-import sys
-from fractal_info import whichList, JULIAS,MBROTS, imageKey
+import sys, time
+from fractal_info import *
 from image_painter import paint
+from tkinter import mainloop
 
 def menu():
-
+    userInput = sys.argv[1]
     # quit when too many arguments are given
     if len(sys.argv) < 2:
         print("Please provide the name of a fractal as an argument")
@@ -37,17 +38,22 @@ def menu():
         sys.exit(1)
 
     # quite when one of the arguments isn't in the command line
-    elif sys.argv[1] not in JULIAS + MBROTS:
-        print(f"ERROR: {sys.argv[1]} is not a valid fractal")
+    elif userInput not in JULIAS + MBROTS:
+        print(f"ERROR: {userInput} is not a valid fractal")
         print("Please choose one of the following:")
         validImages()
         sys.exit(1)
 
     # Otherwise, quit with an error message to help the user learn how to run it
     else:
-        paint(imageKey(userInput), userInput, whichList(userInput))
-        print("Close the image window to exit the program")
-        mainloop()
+        paint(images, userInput, whichList(userInput))
+
+
+
+
+
+if __name__ == "__main__":
+    menu()
 
 
 

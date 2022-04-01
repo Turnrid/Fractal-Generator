@@ -1,48 +1,53 @@
 from tkinter import Tk, Canvas, PhotoImage, mainloop
-import time, mandelbrot, julia, palette
+import mandelbrot, julia, palette, sys, time
 
 
 
 
-def paint(fractals, userInput, choice):
+def paint(fractalDict, userInput, choice):
     """Paint a Fractal image into the TKinter PhotoImage canvas.  	         	  
     This code creates an image which is 640x640 pixels in size."""
 
-    start = time.time()
+    screenSize = 512
     window = Tk()
-    img = PhotoImage(width=512, height=512)
-    fractal = fractals[userInput]
+    img = PhotoImage(width=screenSize, height=screenSize)
+    fractalStartingPoint = fractalDict[userInput]
+    start = time.time()
 
     # Figure out how the boundaries of the PhotoImage relate to coordinates on
     # the imaginary plane.
-    minx = fractal['centerX'] - (fractal['axisLen'] / 2.0)
-    maxx = fractal['centerX'] + (fractal['axisLen'] / 2.0)
-    miny = fractal['centerY'] - (fractal['axisLen'] / 2.0)
-    maxy = fractal['centerY'] + (fractal['axisLen'] / 2.0)
+    minx = fractalStartingPoint['centerX'] - (fractalStartingPoint['axisLen'] / 2.0)
+    miny = fractalStartingPoint['centerY'] - (fractalStartingPoint['axisLen'] / 2.0)
+    maxx = fractalStartingPoint['centerX'] + (fractalStartingPoint['axisLen'] / 2.0)
 
     # Display the image on the screen
-    canvas = Canvas(window, width=512, height=512, bg='#000000')
+    canvas = Canvas(window, width=screenSize, height=screenSize, bg='#000000')
     canvas.pack()
-    canvas.create_image((256, 256), image=img, state="normal")
+    canvas.create_image((screenSize/2, screenSize/2), image=img, state="normal")
 
     # At this scale, how much length and height on the imaginary plane does one
     # pixel take?
-    pixelsize = abs(maxx - minx) / 512
+    pixelsize = abs(maxx - minx) / screenSize
 
     if choice == 0:
-        color = julia.returnIterationCount(null, null)
+        mathFunction = julia.returnIterationCount
     else:
-        color = mandelbrot.returnIterationCount(null, null)
+        mathFunction = mandelbrot.returnIterationCount
 
-    for row in range(512, 0, -1):
-        for col in range(512):
+    for row in range(screenSize, 0, -1):
+        for col in range(screenSize):
             x = minx + col * pixelsize
             y = miny + row * pixelsize
-            img.put(color(complex(x, y), palette.paletteLength(choice)), (col, 512 - row))
+            color = mathFunction(complex(x, y), palette.paletteLength(choice))
+            currentPalette = palette.paletteSelector(choice)
+            img.put(currentPalette[color], (col, screenSize - row))
         window.update()  # display a row of pixels
 
     stop = time.time()
     print(f"Done in {stop - start:.3f} seconds!", file=sys.stderr)
     img.write(f"{userInput}.png")
     print(f"Wrote image {userInput}.png")
+    print("Close the image window to exit the program")
+    mainloop()
+
 
