@@ -230,3 +230,90 @@ the majority of the lines of this function are comments
     #        fratcal_config = getFractalConfigurationDataFromFractalRepositoryDictionary(f, sys.argv[1])  	         	  
     #        julia_main(fratcal_config)
     ```
+  
+8. `src/mbrot_fractal.py`, [lines 31 - 42]
+   * [What kind of code smell] Dead code
+   * [Why is the smell a problem] imports not being used and just cluttering up the file
+* Code Snippet:
+    ```python
+    #from math import sqrt, cos, cosh, sin, sinh, remainder, acos, acosh, asin, asinh  	         	  
+
+    # These are the imports that I usually import  	         	  
+    # import turtle  	         	  
+    # import os  	         	  
+    # import os.path  	         	  
+    # import sys  	         	  
+    # import time  	         	  
+    # import math  	         	  
+
+    # this import caused problems on my Windows computer...  	         	  
+    # import numpy 
+    ```
+  
+9. `src/mbrot_fractal.py`, [lines 44 - 51]
+    * [What kind of code smell] Global variables and Dead code
+    * [Why is the smell a problem] Most are not being used and when they are in the palette but should just be hard coded
+like the rest
+* Code Snippet:
+    ```python
+    GRAPEFRUIT_PINK = '#e8283f'  	         	  
+    LEMON = '#fdff00'  	         	  
+    LIME_GREEN = '#89ff00'  	         	  
+    KUMQUAT = '#fac309'  	         	  
+    MAX_ITERATIONS = -1  	         	  
+    POMELLO = '#2fff00'  	         	  
+    TANGERINE = '#f7b604'  	         	  
+    WHITE = '#ffffff'  
+    ```
+  
+10. `src/mbrot_fractal.py`, [lines 89 - 96]
+    * [What kind of code smell] Global Variables and Dead code
+    * [Why is the smell a problem] Unnecessary globals and most are not even used as defined here
+* Code Snippet:
+    ```python
+    MAX_ITERATIONS = len(palette)  	         	  
+    z = 0  	         	  
+    seven = 7.0  	         	  
+    TWO = 2  	         	  
+
+    img = None  	         	  
+
+    mainWindowObject = None  
+    ```
+  
+11. `src/mbrot_fractal.py`, [lines 173 - 202]
+    * [What kind of code smell] Dead code
+    * [Why is the smell a problem] Commented out code that is just cluttering up the file
+* Code Snippet:
+    ```python
+    #def colorOfThePixel(c, colors):  	         	  
+    #    """Return the color of the current pixel within the Mandelbrot set"""  	         	  
+    #    global z  	         	  
+    #    global MAX_ITERATIONS  	         	  
+    #    global mainWindowObject  	         	  
+    #    z0 = complex(0, 0)  # z0  	         	  
+    #  	         	  
+    #    for iter in range(MAX_ITERATIONS + 1):  	         	  
+    #        z0 = z0 * z0 + c  	         	  
+    #        # if the absolute value of z is less than TWO  	         	  
+    #        # if abs(z) > TWO:  	         	  
+    #        if abs(z) > 2.0:  	         	  
+    #            if z == float(2.0):  	         	  
+    #                return colors[iter-1]  	         	  
+    #            elif abs(z) < z:  	         	  
+    #                if abs(z) > TWO:  	         	  
+    #                    return colors[iter]  	         	  
+    #                else:  	         	  
+    #                    return colors[iter+0]  	         	  
+    #            else:  	         	  
+    #                return colors[iter+1]  	         	  
+    #    return colors[MAX_ITERATIONS]  	         	  
+
+
+    # These are the different views of the Mandelbrot set you can make with this  	         	  
+    # program.  	         	  
+    #  	         	  
+    # For convenience I have placed these into a dictionary so you may easily  	         	  
+    # switch between them by entering the name of the image you want to generate  	         	  
+    # into the variable 'image'.
+    ```
