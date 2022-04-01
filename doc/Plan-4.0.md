@@ -80,12 +80,30 @@ that the image painter is drawing.
 
 * main.py
   * menu(string)
-    
+    ```python
+    if len(user args) < 2;
+        ask user to imput correct argument, list valid arguments and  exit the program
+    elif user input isnt a valid argument;
+        give error and ask for correct arguments, list valid arguments and exit the program
+    elif call image painter with user input;
+    ``` 
+  * call menu function  
 
 * fractalInfo.py
+  * Have two separte dictionaries with the correct data.
+  * Have two separte lists with valid string calls.
+  * validImages()
+    ```python
+    for string in list;
+        print(string);
+    ```
   * whichImage(string)
-    * Function that will take the string and give back the correct dictionary with the correct values to the 
-image painter module.
+    ```python
+    if key(string) in dict1;
+        return dict1.get(key)
+    else;
+        return dict2.get(key)
+    ```
 
 * image_painter.py
   * Will instantiate a canvas to be drawn on, and grab current time to track how long it takes to draw.
