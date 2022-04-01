@@ -100,13 +100,133 @@ Other code smells may be present; list them as well.
 ## Code Smells
 
 0. `src/julia_fractal.py`, [lines 68,69] 
-        * [What kind of code smell] Both Global Variables
-        * [Why is the smell a problem?] The first `grad` can be added as a parameter since
-only one function calls it. For the second `win` it doesn't get called anywhere, so it is redundant.
-    * Code Snippet:
-    ```python
+   * [What kind of code smell] Both Global Variables.
+   * [Why is the smell a problem?] The first `grad` can be added as a parameter since
+only one function calls it. For the second `win` it can also be added as a parameter in this function.
+* Code Snippet:
+
+    ```    python 
     global grad  	         	  
     global win
+    ```  
+1. `src/julia_fractal.py`, [lines 91 - 95]
+   * [What kind of code smell] Overly complex decision tree.
+   * [Why is the smell a problem?] Can be simplified into one if statement.
+* Code Snippet:
+    ```    python
+  for key in dictionary:  	         	  
+        if key in dictionary:  	         	  
+            if key == name:  	         	  
+                value = dictionary[key]  	         	  
+                return key
     ```
-1.  `src/julia_fractal.py`, 
-   
+  
+2. `src/julia_fractal.py`, [line 76, 79]
+   * [What kind of code smell] Dead code
+   * [Why is the smell a problem] Will never get called being after a return statement
+* Code Snippet:
+    ```     python
+        for i in range(78):  	         	  
+        z = z * z + c  # Iteratively compute z1, z2, z3 ...  	         	  
+        if abs(z) > 2:  	         	  
+            return grad[i]  # The sequence is unbounded  	         	  
+            z += z + c  	         	  
+    # TODO: One of these return statements makes the program crash sometimes  	         	  
+    return grad[77]         # Else this is a bounded sequence  	         	  
+    return grad[78]        
+    ```
+
+3. `src/julia_fractal.py`, [lines 100 - 177]
+   * [What kind of code smell] Parameter list is too long and comments that share too much info
+   * [Why is the smell a problem] There is way to many parameters to keep track of and understand for this function. As well as
+the majority of the lines of this function are comments
+* Code Snippet:
+    ```     python
+  def makePictureOfFractal(f, i, e, w, g, p, W, s):  	         	  
+    """Paint a Fractal image into the TKinter PhotoImage canvas.  	         	  
+    Assumes the image is 640x640 pixels."""  	         	  
+
+    # Correlate the boundaries of the PhotoImage object to the complex  	         	  
+    # coordinates of the imaginary plane  	         	  
+
+    # Compute the minimum coordinate of the picture  	         	  
+    min = ((f['centerX'] - (f['axisLength'] / 2.0)),  	         	  
+           (f['centerY'] - (f['axisLength'] / 2.0)))  	         	  
+
+    # Compute the maximum coordinate of the picture  	         	  
+    # The program has only one axisLength because the images are square  	         	  
+    # Squares are basically rectangles except the sides are equal instead of different  	         	  
+    max = ((f['centerX'] + (f['axisLength'] / 2.0)),  	         	  
+           (f['centerY'] + (f['axisLength'] / 2.0)))  
+    ```
+
+4. `src/julia_fractal.py`, [lines 126 - 131]
+   * [What kind of code smell] Redundant code as well as comments that share to much info
+   * [Why is the smell a problem] Multiple calls that don't need to be made as well as unnecessary comments
+* Code Snippet:
+    ```python
+     # Create the TK PhotoImage object that backs the Canvas Objcet  	         	  
+    # This is what lets us draw individual pixels instead of drawing things like rectangles, squares, and quadrilaterals  	         	  
+    tk_Interface_PhotoImage_canvas_pixel_object.create_image((s/2, s/2), image=p, state="normal")  	         	  
+    tk_Interface_PhotoImage_canvas_pixel_object.pack()  # This seems repetitive  	         	  
+    tk_Interface_PhotoImage_canvas_pixel_object.pack()  # But it is how Larry wrote it the tutorial  	         	  
+    tk_Interface_PhotoImage_canvas_pixel_object.pack()  # Larry's a smart guy.  I'm sure he has his reasons.
+    ```
+
+5. `src/julia_fractal.py`, [lines 248 - 261]
+    * [What kind of code smell] Dead code
+    * [Why is the smell a problem] Not called and can be removed
+* Code Snippet:
+    ```python
+    WHITE = '#ffffff'  # white  	         	  
+    RED = '#ff0000'  # red  	         	  
+    BLUE = '#00ff00'  # blue  	         	  
+    GREEN = '#0000ff'  # green  	         	  
+    BLACK = '#000000'  # black  	         	  
+    ORANGE = '#ffa50'  # orange  	         	  
+    TOMATO = '#ff6347'  # tomato (a shade of red)  	         	  
+    HOT_PINK = '#ff69b4'  # hot pink (a kind of pink)  	         	  
+    REBECCA_PURPLE = '#663399'  # Rebecca Purple  	         	  
+    LIME_GREEN = '#89ff00'  # lime green (brighter than regular green)  	         	  
+    GREY0 = '#000000'  # gray 0 - basically the same as black  	         	  
+    GRAY37 = '#5e5e5e'  # gray 37 - lighter than black and gray 36  	         	  
+    GREY74 = '#bdbdbd'  # gray 74 - almost white  	         	  
+    GRAY99 = '#fcfcfc'  # gray 99 - almost white  	         	  
+    ```
+  
+6. `src/julia_fractal.py`, [lines 278 - 281]
+   * [What kind of code smell] Magic number and dead code
+   * [Why is the smell a problem] Defines a variable and doesn't even use it
+* Code Snippet:
+    ```python
+     # the size of the image we will create is 512x512 pixels  	         	  
+    s = 512  	         	  
+    # construct a new TK PhotoImage object that is 512 pixels square...  	         	  
+    tkPhotoImage = PhotoImage(width=512, height=512)
+    ```
+  
+7. `src/julia_fractal.py`, [lines 301 - 319]
+   * [What kind of code smell] Dead code
+   * [Why is the smell a problem] Just clutters up the file
+* Code Snippet:
+    ```python
+    ## This is some weird Python thing... but all of the tutorials do it, so here we go  	         	  
+    #if __name__ == '__main__':  	         	  
+    #    # Process command-line arguments, allowing the user to select their fractal  	         	  
+    #    if len(sys.argv) < 2:  	         	  
+    #        print("Please provide the name of a fractal as an argument")  	         	  
+    #        for i in f:  	         	  
+    #            print(f"\t{i}")  	         	  
+    #        sys.exit(1)  	         	  
+    #  	         	  
+    #    elif sys.argv[1] not in f:  	         	  
+    #        print(f"ERROR: {sys.argv[1]} is not a valid fractal")  	         	  
+    #        print("Please choose one of the following:")  	         	  
+    #        for i in f:  	         	  
+    #            print(f"\t{i}")  	         	  
+    #        sys.exit(1)  	         	  
+    #  	         	  
+    #    else:  	         	  
+    #        fratcal_config = getFractalConfigurationDataFromFractalRepositoryDictionary(f, sys.argv[1])  	         	  
+    #        julia_main(fratcal_config)
+    ```
