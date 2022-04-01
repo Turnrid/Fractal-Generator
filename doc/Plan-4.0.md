@@ -4,10 +4,15 @@
 
 **Deliver:**
 
-*   A detailed written description of the problem this program aims to solve.
-*   Describe what a *good* solution looks like.
-    *   List what you already know how to do.
-    *   Point out any challenges that you can foresee.
+We are to refactor the program in such a way to make it easy to add new functionality to the existing program.
+
+A good solution will:
+
+* Separate out the Julia and Mandelbrot calculations into separate modules.
+* Will have a module that has the image creating functionality.
+* A module with all palette specifications for the fractals.
+* A module with the different fractal image specifications
+* A module that will access all the above and run the program
 
 
 ## Phase 1: System Analysis *(10%)*
