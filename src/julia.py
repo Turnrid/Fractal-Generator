@@ -1,7 +1,7 @@
 
 
 
-def returnIterationCount(complexNumber):
+def returnIterationCount(complexNumber, paletteLength):
     """Return the index of the color of the current pixel within the Julia set  	         	  
     in the palette array"""
 
