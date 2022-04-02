@@ -30,9 +30,9 @@ def paint(fractalDict, userInput, choice):
     pixelsize = abs(maxx - minx) / screenSize
 
     if choice == 0:
-        mathFunction = julia.returnIterationCount
+        mathFunction = julia.returnIterationCountJulia
     else:
-        mathFunction = mandelbrot.returnIterationCount
+        mathFunction = mandelbrot.returnIterationCountMandelbrot
 
     for row in range(screenSize, 0, -1):
         for col in range(screenSize):
@@ -46,8 +46,8 @@ def paint(fractalDict, userInput, choice):
     stop = time.time()
     print(f"Done in {stop - start:.3f} seconds!", file=sys.stderr)
     img.write(f"{userInput}.png")
-    print(f"Wrote image {userInput}.png")
-    print("Close the image window to exit the program")
+    print(f"Wrote image {userInput}.png", file=sys.stderr)
+    print("Close the image window to exit the program", file=sys.stderr)
     mainloop()
 
 

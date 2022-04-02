@@ -1,8 +1,6 @@
 
 
 
-JULIAS = [ 'fulljulia', 'hourglass', 'lace-curtains', 'lakes' ]
-MBROTS = [ 'elephants', 'leaf', 'mandelbrot', 'mandelbrot-zoomed', 'seahorse', 'spiral0', 'spiral1', 'starfish' ]
 
 
 def validImages():
@@ -18,6 +16,10 @@ def whichList(userInput):
         return 0
     else:
         return 1
+
+
+JULIAS = [ 'fulljulia', 'hourglass', 'lace-curtains', 'lakes' ]
+MBROTS = [ 'elephants', 'leaf', 'mandelbrot', 'mandelbrot-zoomed', 'seahorse', 'spiral0', 'spiral1', 'starfish' ]
 
 
 images = {
