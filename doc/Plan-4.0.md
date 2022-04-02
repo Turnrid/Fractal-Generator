@@ -31,16 +31,6 @@ Once drawn a png file will be created with the image that was drawn.
 
 **Deliver:**
 
-*   Function signatures that include:
-    *   Descriptive names.
-    *   Parameter lists.
-    *   Documentation strings that explain the purpose, inputs and outputs.
-*   Pseudocode that captures how each function works.
-    *   Pseudocode != source code.  Do not paste your finished source code into this part of the plan.
-    *   Explain what happens in the face of good and bad input.
-    *   Write a few specific examples that occurred to you.
-
-
 * main.py
   * menu(string)
     * Menu function that will take the string from the user, and give the string 
@@ -134,20 +124,17 @@ that the image painter is drawing.
 
 **Deliver:**
 
-*   (More or less) working code.
-*   Note any relevant and interesting events that happened while you wrote the code.
-    *   e.g. things you learned, things that didn't go according to plan
-
+* Was alot easier to implment then I thought it would be.
+* Satisfying when you can delete all the garbage code.
 
 ## Phase 4: Testing & Debugging *(30%)*
 
 **Deliver:**
 
-*   A set of test cases that you have personally run on your computer.
-    *   Include a description of what happened for each test case.
-    *   For any bugs discovered, describe their cause and remedy.
-*   Write your test cases in plain language such that a non-coder could run them and replicate your experience.
 
+* Updated built in tests to work for refactoring also added a pixels test for juila too.
+* Getting mandelbrot and julia to use the same paint function was a bit of a trick
+* Really not sure what else to test other than what I am.
 
 ## Phase 5: Deployment *(5%)*
 

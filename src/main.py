@@ -47,10 +47,6 @@ def menu():
     else:
         paint(images, sys.argv[1], whichList(sys.argv[1]))
 
-
-
-
-
 if __name__ == "__main__":
     menu()
 

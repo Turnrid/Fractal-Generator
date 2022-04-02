@@ -1,7 +1,7 @@
 
 
 
-def returnIterationCountJulia(complexNumber, paletteLength):
+def returnIterationCount(complexNumber, paletteLength = 78):
     """Return the index of the color of the current pixel within the Julia set  	         	  
     in the palette array"""
 
@@ -10,11 +10,11 @@ def returnIterationCountJulia(complexNumber, paletteLength):
     c = complex(-1.0, 0.0)
 
     # Here 78 refers to the number of colors in the palette
-    for i in range(78):
+    for i in range(paletteLength):
         z = z * z + c  # Iteratively compute z1, z2, z3 ...
         if abs(z) > 2:
             return i  # The sequence is unbounded
-    return 77        # Else this is a bounded sequence
+    return paletteLength - 1        # Else this is a bounded sequence
 
 
 def getFractalConfigurationDataFromFractalRepositoryDictionary(dictionary, name):
@@ -31,3 +31,8 @@ def getFractalConfigurationDataFromFractalRepositoryDictionary(dictionary, name)
             if key == name:
                 value = dictionary[key]
                 return key
+
+def pixelsWrittenSoFar(rows, cols):
+    pixels = rows * cols
+    print(f"{pixels} pixels have been output so far")
+    return pixels

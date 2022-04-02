@@ -32,7 +32,6 @@ from fractal_info import images
 class TestMandelbrot(unittest.TestCase):  	         	  
     def test_colorOfThePixel(self):
         palette = paletteSelector(1)
-
         self.assertEqual(palette[returnIterationCount(complex(0, 0),paletteLength(1))], '#e8283f')
         self.assertEqual(palette[returnIterationCount(complex(-0.751, 1.1075),paletteLength(1))], '#baf12e')
         self.assertEqual(palette[returnIterationCount(complex(-0.2, 1.1075),paletteLength(1))], '#e0ceaf')
@@ -45,7 +44,7 @@ class TestMandelbrot(unittest.TestCase):
         self.assertEqual(palette[returnIterationCount(complex(0.4937499999999999, -0.234375),paletteLength(1))], '#d9e758')
         self.assertEqual(palette[returnIterationCount(complex(0.3374999999999999, 0.546875),paletteLength(1))], '#e1cbbd')
 
-    def test_pixelsWrittenSoFar(self):  	         	  
+    def test_pixelsWrittenSoFarMandalbrot(self):
         self.assertEqual(pixelsWrittenSoFar(7, 7), 49)  	         	  
         self.assertEqual(pixelsWrittenSoFar(257, 321), 82497)  	         	  
         self.assertEqual(pixelsWrittenSoFar(256, 256), 65536)  	         	  

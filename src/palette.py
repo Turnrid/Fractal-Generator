@@ -11,7 +11,7 @@ def paletteLength(choice):
     if choice == 1:
         return len(mbrotPalette)
     elif choice == 0:
-        return len(juliaPalette)
+        return 78
 
 
 mbrotPalette = [

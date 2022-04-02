@@ -30,9 +30,9 @@ def paint(fractalDict, userInput, choice):
     pixelsize = abs(maxx - minx) / screenSize
 
     if choice == 0:
-        mathFunction = julia.returnIterationCountJulia
+        mathFunction = julia.returnIterationCount
     else:
-        mathFunction = mandelbrot.returnIterationCountMandelbrot
+        mathFunction = mandelbrot.returnIterationCount
 
     for row in range(screenSize, 0, -1):
         for col in range(screenSize):

@@ -1,6 +1,6 @@
 
 
-def returnIterationCountMandelbrot(complexNum, paletteLength):
+def returnIterationCount(complexNum, paletteLength):
     """Return the color of the current pixel within the Mandelbrot set"""
     z = complex(0, 0)  # z0
 

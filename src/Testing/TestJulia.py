@@ -23,7 +23,7 @@
 # IN THE SOFTWARE.  	         	  
 
 import unittest  	         	  
-from julia import returnIterationCount, getFractalConfigurationDataFromFractalRepositoryDictionary
+from julia import returnIterationCount, pixelsWrittenSoFar, getFractalConfigurationDataFromFractalRepositoryDictionary
 from palette import paletteLength, paletteSelector
 from fractal_info import images
 
@@ -33,7 +33,6 @@ from fractal_info import images
 class TestJulia(unittest.TestCase):  	         	  
     def test_colorOfThePixel(self):
         palette = paletteSelector(0)
-
         self.assertEqual(palette[returnIterationCount(complex(0, 0))], '#009cb3')
         self.assertEqual(palette[returnIterationCount(complex(-0.751, 1.1075))], '#ffe4b5')
         self.assertEqual(palette[returnIterationCount(complex(-0.2, 1.1075))], '#ffe4b5')
@@ -54,6 +53,12 @@ class TestJulia(unittest.TestCase):
         self.assertIsNone(getFractalConfigurationDataFromFractalRepositoryDictionary(images, 'Still Not In Here'))
         self.assertIsNotNone(getFractalConfigurationDataFromFractalRepositoryDictionary(images, 'hourglass'))
 
+    def test_pixelsWrittenSoFarJulia(self):
+        self.assertEqual(pixelsWrittenSoFar(7, 7), 49)
+        self.assertEqual(pixelsWrittenSoFar(257, 321), 82497)
+        self.assertEqual(pixelsWrittenSoFar(256, 256), 65536)
+        self.assertEqual(pixelsWrittenSoFar(100, 100), 10000)
+        self.assertEqual(pixelsWrittenSoFar(640, 480), 307200)
 
 if __name__ == '__main__':  	         	  
     unittest.main()  	         	  

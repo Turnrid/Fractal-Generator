@@ -7,7 +7,6 @@ def validImages():
     for imageName in JULIAS + MBROTS:
         print(f"\t{imageName}")
 
-
 def imageKey(userInput):
     return images.get(userInput)
 
