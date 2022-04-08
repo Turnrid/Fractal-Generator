@@ -1,4 +1,4 @@
-# Mandelbrot Set Visualizer  	         	  
+#!/usr/bin/env python3  	         	  
 
 #                         ~  	         	  
 #                        (o)<  DuckieCorp Software License  	         	  
@@ -23,5 +23,37 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING  	         	  
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  	         	  
 # IN THE SOFTWARE.  	         	  
+
+import sys, time
+from fractal_info import *
+from image_painter import paint
+from tkinter import mainloop
+
+def menu():
+    userInput = sys.argv[1]
+    # quit when too many arguments are given
+    if len(sys.argv) < 2:
+        print("Please provide the name of a fractal as an argument")
+        validImages()
+        sys.exit(1)
+
+    # quite when one of the arguments isn't in the command line
+    elif userInput not in JULIAS + MBROTS:
+        print(f"ERROR: {userInput} is not a valid fractal")
+        print("Please choose one of the following:")
+        validImages()
+        sys.exit(1)
+
+    # Otherwise, quit with an error message to help the user learn how to run it
+    else:
+        paint(images, userInput, whichList(userInput))
+
+
+
+
+
+if __name__ == "__main__":
+    menu()
+
 
 
