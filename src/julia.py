@@ -1,38 +1,11 @@
+def count(z, max_iter):  	         	  
+    """Return the iteration count for this part of the Julia fractal Complex Plane"""  	         	  
 
+    # c is the Julia Constant; varying this value can yield interesting images  	         	  
+    c = complex(-1.0, 0.0)  	         	  
 
-
-def returnIterationCount(complexNumber, paletteLength = 78):
-    """Return the index of the color of the current pixel within the Julia set  	         	  
-    in the palette array"""
-
-    z = complexNumber
-    # c is the Julia Constant; varying this value can yield interesting images
-    c = complex(-1.0, 0.0)
-
-    # Here 78 refers to the number of colors in the palette
-    for i in range(paletteLength):
-        z = z * z + c  # Iteratively compute z1, z2, z3 ...
-        if abs(z) > 2:
-            return i  # The sequence is unbounded
-    return paletteLength - 1        # Else this is a bounded sequence
-
-
-def getFractalConfigurationDataFromFractalRepositoryDictionary(dictionary, name):
-    """Make sure that the fractal configuration data repository dictionary  	         	  
-    contains a key by the name of 'name'  	         	  
-
-    When the key 'name' is present in the fractal configuration data repository  	         	  
-    dictionary, return its value.  	         	  
-
-    Return False otherwise  	         	  
-    """
-    for key in dictionary:
-        if key in dictionary:
-            if key == name:
-                value = dictionary[key]
-                return key
-
-def pixelsWrittenSoFar(rows, cols):
-    pixels = rows * cols
-    print(f"{pixels} pixels have been output so far")
-    return pixels
+    for i in range(max_iter - 1):
+        z = z * z + c  # Iteratively compute z1, z2, z3 ...  	         	  
+        if abs(z) > 2.0:  	         	  
+            return i
+    return max_iter - 1

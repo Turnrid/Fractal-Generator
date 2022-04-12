@@ -24,31 +24,27 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  	         	  
 # IN THE SOFTWARE.  	         	  
 
-import sys, time
-from fractal_info import *
-from image_painter import paint
-from tkinter import mainloop
+import sys  	         	  
 
-def menu():
-    # quit when too many arguments are given
-    if len(sys.argv) < 2:
-        print("Please provide the name of a fractal as an argument")
-        validImages()
-        sys.exit(1)
-
-    # quite when one of the arguments isn't in the command line
-    elif sys.argv[1] not in JULIAS + MBROTS:
-        print(f"ERROR: {sys.argv[1]} is not a valid fractal")
-        print("Please choose one of the following:")
-        validImages()
-        sys.exit(1)
-
-    # Otherwise, quit with an error message to help the user learn how to run it
-    else:
-        paint(images, sys.argv[1], whichList(sys.argv[1]))
-
-if __name__ == "__main__":
-    menu()
+from FractalInformation import FRACTALS
+from ImagePainter import paint
 
 
+# quit when too many arguments are given  	         	  
+if len(sys.argv) < 2:  	         	  
+    print("Please provide the name of a fractal as an argument")  	         	  
+    for i in FRACTALS:
+        print(f"\t{i}")  	         	  
+    sys.exit(1)  	         	  
 
+# quite when one of the arguments isn't in the command line  	         	  
+elif sys.argv[1] not in FRACTALS:
+    print(f"ERROR: {sys.argv[1]} is not a valid fractal")  	         	  
+    print("Please choose one of the following:")  	         	  
+    for i in FRACTALS:  	         	  
+        print(f"\t{i}")  	         	  
+    sys.exit(1)  	         	  
+
+# Otherwise, quit with an error message to help the user learn how to run it  	         	  
+else:  	         	  
+    paint(FRACTALS[sys.argv[1]], sys.argv[1])
