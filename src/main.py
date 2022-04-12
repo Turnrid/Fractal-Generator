@@ -26,8 +26,28 @@
 
 import sys  	         	  
 
+<<<<<<< HEAD
 from FractalInformation import FRACTALS
 from ImagePainter import paint
+=======
+def menu():
+    # quit when too many arguments are given
+    if len(sys.argv) < 2:
+        print("Please provide the name of a fractal as an argument")
+        validImages()
+        sys.exit(1)
+
+    # quite when one of the arguments isn't in the command line
+    elif sys.argv[1] not in JULIAS + MBROTS:
+        print(f"ERROR: {sys.argv[1]} is not a valid fractal")
+        print("Please choose one of the following:")
+        validImages()
+        sys.exit(1)
+
+    # Otherwise, quit with an error message to help the user learn how to run it
+    else:
+        paint(images, sys.argv[1], whichList(sys.argv[1]))
+>>>>>>> 380c7b338eb557fd57d897f72026f57d9e69ed74
 
 
 # quit when too many arguments are given  	         	  
