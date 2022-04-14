@@ -4,20 +4,16 @@
 
 **Deliver:**
 
-*   A detailed written description of the problem this program aims to solve.
-*   Describe what a *good* solution looks like.
-    *   List what you already know how to do.
-    *   Point out any challenges that you can foresee.
+An easily expandable program that can take in files with specific information to draw a fractal based on that 
+information. 
 
 
 ## Phase 1: System Analysis *(10%)*
 
 **Deliver:**
 
-*   List all of the data that is used by the program, making note of where it comes from.
-*   Explain what form the output will take.
-*   Describe what algorithms and formulae will be used (but don't write them yet).
-
+* .frac files that will be turned into a dictionary. Then sent and made into a fractal object that depending on the type 
+will then use specific count() functions for that type of fractal, and finally drawn into a .png file.
 
 ## Phase 2: Design *(30%)*
 
