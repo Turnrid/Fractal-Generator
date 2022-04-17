@@ -1,6 +1,12 @@
 import sys
 
 
+def FractalParser(fileName):
+    dictionary = convertToDictionary(fileName)
+    return dictionary
+
+
+
 def convertToDictionary(fileName):
     fractalDic = {}
 

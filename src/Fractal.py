@@ -1,6 +1,6 @@
 class Fractal:
-    def __init__(self, iter):
-        self.iter = iter
+    def __init__(self, iterations):
+        self.iter = iterations
 
     def count(self, complexNumber):
         raise NotImplementedError("Concrete subclass of Fractal must implement count() method")
@@ -37,4 +37,8 @@ class Julia(Fractal):
 
 
 class OtherFractal(Fractal):
-    pass
+
+    def count(param, param1):
+        return None
+
+

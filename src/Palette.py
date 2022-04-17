@@ -2,9 +2,9 @@ from colour import Color
 
 
 class Palette:
-    def __init__(self, iterations, number):
+    def __init__(self, iterations):
         self.iterations = iterations
-        self.number = number
+
 
     def getColor(self, paletteNumber, palette):
         raise NotImplementedError("Concrete subclass of Palette must implement getColor() method")

@@ -24,27 +24,25 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  	         	  
 # IN THE SOFTWARE.  	         	  
 
-import sys  	         	  
+import sys
+import FractalParser, FractalFactory, PaletteFactory
 
 from FractalInformation import FRACTALS
-from ImagePainter import paint
+from image_painter import ImagePainter
 
 
-# quit when too many arguments are given  	         	  
-if len(sys.argv) < 2:  	         	  
-    print("Please provide the name of a fractal as an argument")  	         	  
-    for i in FRACTALS:
-        print(f"\t{i}")  	         	  
-    sys.exit(1)  	         	  
+if len(sys.argv) == 1:
+    fractalInfo = FractalParser.FractalParser()
+else:
+    fractalInfo = FractalParser.FractalParser(sys.argv[1])
 
-# quite when one of the arguments isn't in the command line  	         	  
-elif sys.argv[1] not in FRACTALS:
-    print(f"ERROR: {sys.argv[1]} is not a valid fractal")  	         	  
-    print("Please choose one of the following:")  	         	  
-    for i in FRACTALS:  	         	  
-        print(f"\t{i}")  	         	  
-    sys.exit(1)  	         	  
+fractal = FractalFactory.makeFractal(fractalInfo)
 
-# Otherwise, quit with an error message to help the user learn how to run it  	         	  
-else:  	         	  
-    paint(FRACTALS[sys.argv[1]], sys.argv[1])
+if len(sys.argv) >= 2:
+    palette = PaletteFactory.makePalette(fractalInfo, "paletteOne")
+else:
+    palette = PaletteFactory.makePalette(fractalInfo, sys.argv[2])
+
+ImagePainter.paint(fractalInfo)
+
+
