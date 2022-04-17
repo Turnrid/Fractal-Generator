@@ -8,9 +8,9 @@ import time
 import sys
 
 
-import Palette
-import Mandelbrot
-import Julia
+import palette
+import mandelbrot
+import julia
 
 
 SIZE = 512
@@ -42,19 +42,19 @@ def paint(fractal, imagename):
     pixelsize = abs(maxx - minx) / SIZE  	         	  
 
     if fractal['type'] == 'mandelbrot':
-        count = Mandelbrot.count  	         	  
-        palette = Palette.MANDELBROT
+        count = mandelbrot.count
+        Palette = palette.MANDELBROT
     else:
-        count = Julia.count  	         	  
-        palette = Palette.JULIA
-    max_iter = len(palette)
+        count = julia.count
+        Palette = palette.JULIA
+    max_iter = len(Palette)
 
     for row in range(SIZE, 0, -1):  	         	  
         for col in range(SIZE):  	         	  
             x = minx + col * pixelsize  	         	  
             y = miny + row * pixelsize  	         	  
             c = count(complex(x, y), max_iter)  	         	  
-            img.put(palette[c], (col, SIZE - row))  	         	  
+            img.put(Palette[c], (col, SIZE - row))
         window.update()  # display a row of pixels  	         	  
 
     # Save the image as a PNG  	         	  

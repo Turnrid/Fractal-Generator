@@ -1,5 +1,5 @@
 def count(c, max_iter):
-    """Return the iteration count of the Mandelbrot set at this point in the complext plane"""  	         	  
+    """Return the iteration count of the Mandelbrot set at this point in the complex plane"""
     z = complex(0, 0)  # z0  	         	  
 
     for i in range(max_iter - 1):  	         	  
