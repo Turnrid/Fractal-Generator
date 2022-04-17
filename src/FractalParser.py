@@ -1,10 +1,20 @@
 import sys
 
 
-def FractalParser(fileName):
-    dictionary = convertToDictionary(fileName)
-    return dictionary
+def FractalParser(fileName=None):
+    if not fileName:
+        dictionary = {'type': 'mandelbrot',
+                      'pixels': 640,
+                      'axislength': 4.0,
+                      'iterations': 100,
+                      'max': {'x': 2.0, 'y': 2.0},
+                      'min': {'x': -2.0, 'y': -2.0},
+                      'pixelsize': 0.00625,
+                      'imagename': 'mandelbrot'}
+    else:
+        dictionary = convertToDictionary(fileName)
 
+    return dictionary
 
 
 def convertToDictionary(fileName):
@@ -25,7 +35,7 @@ def convertToDictionary(fileName):
                 key, value = newLine.split(":")
                 fractalDic[key] = value
 
-        #checkDictionary(fractalDic)
+        checkDictionary(fractalDic)
         file = file[0].split("/")
         maxDic = calculateMax(fractalDic["centerx"], fractalDic["centery"], fractalDic["axislength"])
         minDic = calculateMin(fractalDic["centerx"], fractalDic["centery"], fractalDic["axislength"])
@@ -67,18 +77,26 @@ def calculatePixelSize(centerX, axisLen, pixels):
 
 
 def checkDictionary(dictonary):
-    if not dictonary["centerx"].isdecimal():
-        raise RuntimeError("The value of the 'centerx' parameter is not a number")
-    elif dictonary["centerx"] == "":
-        raise RuntimeError("The value of the 'centerx' parameter is missing")
-    elif "centerx" not in dictonary:
-        raise RuntimeError("The required parameter 'centerx' is missing")
-    elif not isinstance(dictonary["centery"], float):
-        raise RuntimeError("The value of the 'centery' parameter is not a number")
-    elif dictonary["centery"] == "":
-        raise RuntimeError("The value of the 'centery' parameter is missing")
-    elif "centery" not in dictonary:
-        raise RuntimeError("The required parameter 'centery' is missing")
+    for k in ["centerx", "centery", "axislength"]:
+        if k not in dictonary:
+            raise RuntimeError(f"The '{k}' parameter is missing")
+        else:
+            try:
+                dictonary[k] = float(dictonary[k])
+            except:
+                raise RuntimeError(f"The value of the '{k}' parameter is not a number")
+
+    for k in ["pixels", "iterations"]:
+        if k not in dictonary:
+            raise RuntimeError(f"The '{k}' parameter is missing")
+        else:
+            try:
+                dictonary[k] = int(dictonary[k])
+            except:
+                raise RuntimeError(f"The value of the '{k}' parameter is not a number")
+
+    if "type" not in dictonary:
+        raise RuntimeError("The 'type' parameter is missing")
 
 
 

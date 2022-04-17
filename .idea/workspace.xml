@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50644602-a021-4795-b679-275408f69f27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/FractalFactory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PaletteFactory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image_painter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fractal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fractal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mandelbrot.frac" beforeDir="false" afterPath="$PROJECT_DIR$/data/mandelbrot.frac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FractalFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FractalFactory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FractalParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FractalParser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Palette.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Palette.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaletteFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaletteFactory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image_painter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_painter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

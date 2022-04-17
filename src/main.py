@@ -32,17 +32,17 @@ from image_painter import ImagePainter
 
 
 if len(sys.argv) == 1:
-    fractalInfo = FractalParser.FractalParser()
+    dictionary = FractalParser.FractalParser()
 else:
-    fractalInfo = FractalParser.FractalParser(sys.argv[1])
+    dictionary = FractalParser.FractalParser(sys.argv[1])
 
-fractal = FractalFactory.makeFractal(fractalInfo)
+fractal = FractalFactory.makeFractal(dictionary)
 
-if len(sys.argv) >= 2:
-    palette = PaletteFactory.makePalette(fractalInfo, "paletteOne")
+if len(sys.argv) < 3:
+    palette = PaletteFactory.makePalette(dictionary, "paletteOne")
 else:
-    palette = PaletteFactory.makePalette(fractalInfo, sys.argv[2])
+    palette = PaletteFactory.makePalette(dictionary, sys.argv[2])
 
-ImagePainter.paint(fractalInfo)
+ImagePainter(fractal, palette, dictionary).paint()
 
 
