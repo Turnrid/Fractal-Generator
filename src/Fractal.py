@@ -2,8 +2,9 @@ class Fractal:
     def __init__(self, iter):
         self.iter = iter
 
-    def count(self, complex):
+    def count(self, complexNumber):
         raise NotImplementedError("Concrete subclass of Fractal must implement count() method")
+
 
 class Mandelbrot(Fractal):
 
@@ -35,8 +36,5 @@ class Julia(Fractal):
         return self.iter - 1
 
 
-
 class OtherFractal(Fractal):
-
-
-
+    pass
