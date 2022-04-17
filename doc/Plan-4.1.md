@@ -33,6 +33,57 @@
     *   Write a few specific examples that occurred to you.
 
 
+* Fractal Class
+  * Count(Type)
+    * will raise an error
+
+* Mandelbrot method
+  * init(max iteration) 
+  * Count(complex number)
+    * Will calculate and output the value between 0 - max iteration - 1 based on the mandelbrot equation.
+
+* Julia method
+  * init(max iteration) 
+  * Count()
+    * Will calculate and output the value between 0 - max iteration - 1 based on the julia equation.
+
+* Other fractal method
+  * init(max iteration) 
+  * Count()
+    * Will calculate and output the value between 0 - max iteration - 1 based on the other fractal equation.
+
+* FractalFactory class
+  * MakeFractal(dictionary)
+    * Take the dictionary from the Fractal Parser and use the Type and max iteration to create the correct fractal
+object
+
+* FractalParser
+  * Read the file and turn into a dictionary
+
+* Palette
+    * getColor()
+        * will raise an error
+
+* Palette1
+  * getColor(max iterations)
+    * Create a palette based off of the number of iterations
+
+* Palette2
+  * getColor(max iterations)
+    * Create a palette based off of the number of iterations
+
+* PaletteFactory
+  * MakePalette(max iterations)
+    * Take the dictionary from the Fractal Parser and use the Type and max iteration to create the correct fractal
+object
+
+* ImagePainter
+  * Takes in the products of FractalFactory, PaletteFactory, and FractalParser
+  * Using those products then creates the fractal image
+    
+
+
+
 ## Phase 3: Implementation *(15%)*
 
 **Deliver:**
