@@ -22,15 +22,15 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS  	         	  
 # IN THE SOFTWARE.  	         	  
 
-import unittest  	         	  
+import unittest
 
-from Testing import TestMandelbrot, TestJulia  	         	  
+from Testing import PaletteTest, ParserTest, FractalTest
 
+suite = unittest.TestSuite()
 
-suite = unittest.TestSuite()  	         	  
-tests = (TestMandelbrot.TestMandelbrot, TestJulia.TestJulia)  	         	  
-for test in tests:  	         	  
-    suite.addTest(unittest.makeSuite(test))  	         	  
+tests = (PaletteTest.PaletteTest, ParserTest.ParserTest, FractalTest.FractalTest)
+for test in tests:
+    suite.addTest(unittest.makeSuite(test))
 
-runner = unittest.TextTestRunner(verbosity=2)  	         	  
+runner = unittest.TextTestRunner(verbosity=2)
 runner.run(suite)  	         	  

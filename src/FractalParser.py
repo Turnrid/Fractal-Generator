@@ -1,12 +1,10 @@
-import sys
-
 
 def FractalParser(fileName=None):
     if not fileName:
         dictionary = {'type': 'mandelbrot',
                       'pixels': 640,
                       'axislength': 4.0,
-                      'iterations': 100,
+                      'iterations': 256,
                       'max': {'x': 2.0, 'y': 2.0},
                       'min': {'x': -2.0, 'y': -2.0},
                       'pixelsize': 0.00625,
@@ -98,6 +96,3 @@ def checkDictionary(dictonary):
     if "type" not in dictonary:
         raise RuntimeError("The 'type' parameter is missing")
 
-
-
-print(convertToDictionary(sys.argv[1]))

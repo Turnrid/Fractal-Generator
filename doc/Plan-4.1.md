@@ -84,19 +84,15 @@ object
 
 **Deliver:**
 
-*   (More or less) working code.
-*   Note any relevant and interesting events that happened while you wrote the code.
-    *   e.g. things you learned, things that didn't go according to plan
+*   Figuring out how to plug it all together was a bit of a challenge.
 
 
 ## Phase 4: Testing & Debugging *(30%)*
 
 **Deliver:**
 
-*   A set of test cases that you have personally run on your computer.
-    *   Include a description of what happened for each test case.
-    *   For any bugs discovered, describe their cause and remedy.
-*   Write your test cases in plain language such that a non-coder could run them and replicate your experience.
+Wrote tests for the Parser, Palettes and FractalFactory. Found that I needed to compensate for rounding and splicing in 
+Palettes, and helped fix error handling in the parser.
 
 
 ## Phase 5: Deployment *(5%)*

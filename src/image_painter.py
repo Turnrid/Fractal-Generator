@@ -1,8 +1,6 @@
 from tkinter import Tk, Canvas, PhotoImage, mainloop
 import time
-import sys, FractalParser, PaletteFactory, FractalFactory
-
-
+import sys
 
 
 class ImagePainter:
@@ -14,17 +12,14 @@ class ImagePainter:
         self.SIZE = self.dictionary["pixels"]
         self.pixelsize = self.dictionary["pixelsize"]
 
-
     def paint(self):
         """Paint a Fractal image into the TKinter PhotoImage canvas.
         This code creates an image."""
-
 
         # Set up the GUI so that we can paint the fractal image on the screen
         before = time.time()
         window = Tk()
         img = PhotoImage(width=self.SIZE, height=self.SIZE)
-
 
         # Display the image on the screen
         canvas = Canvas(window, width=self.SIZE, height=self.SIZE, bg='#000000')

@@ -6,8 +6,8 @@ def makeFractal(dictionary):
         return Fractal.Mandelbrot(dictionary["iterations"])
     elif dictionary["type"] == "julia":
         return Fractal.Julia(dictionary["iterations"])
-    elif dictionary["type"] == "otherfractal":
-        return Fractal.OtherFractal(dictionary["iterations"])
+    elif dictionary["type"] == "mandelbrot3":
+        return Fractal.Mandelbrot3(dictionary["iterations"])
     elif dictionary["type"] == "":
         raise RuntimeError("No type of fractal specified")
     else:

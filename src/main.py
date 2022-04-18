@@ -25,11 +25,11 @@
 # IN THE SOFTWARE.  	         	  
 
 import sys
-import FractalParser, FractalFactory, PaletteFactory
 
-from FractalInformation import FRACTALS
+import FractalFactory
+import FractalParser
+import PaletteFactory
 from image_painter import ImagePainter
-
 
 if len(sys.argv) == 1:
     dictionary = FractalParser.FractalParser()
