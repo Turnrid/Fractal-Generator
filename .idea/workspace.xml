@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50644602-a021-4795-b679-275408f69f27" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Testing/FractalTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Testing/PaletteTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Testing/ParserTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Manual.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Manual.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/Plan-4.1.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Plan-4.1.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/Signature.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Signature.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Fractal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fractal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FractalFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FractalFactory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FractalInformation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FractalParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/FractalParser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImagePainter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaletteFactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaletteFactory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/TestJulia.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/TestMandelbrot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image_painter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_painter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/julia.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/julia_fractal.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mandelbrot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mbrot_fractal.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/runTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/runTests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -17,6 +17,6 @@
 | April 14 | 20 minutes | Wrote system analysis and requirments 
 | April 15 | 2 hours    | Wrote design, UML, and first draft of manual
 | April 16 | 4 hours    | Worked on implementing program
-| April 17 | 3 hours    | Finished implementing and testing
+| April 17 | 4 hours    | Finished implementing and testing
 
 
