@@ -1,4 +1,0 @@
-# allow UML diagrams in PNG, PDF and JPG formats
-!*.png
-!*.pdf
-!*.jpg
